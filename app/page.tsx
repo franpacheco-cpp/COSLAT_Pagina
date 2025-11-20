@@ -9,7 +9,7 @@ import { Scramble } from '../components/Scramble';
 import { daysUntilTarget } from '../lib/countdown';
 import { ensureAnalytics } from '../lib/firebaseClient';
 
-const telegramInvite = process.env.NEXT_PUBLIC_TELEGRAM_INVITE ?? 'https://t.me/TU-INVITE';
+const telegramInvite = process.env.NEXT_PUBLIC_TELEGRAM_INVITE ?? 'https://t.me/+OLmS8nfAo34zMTE0';
 
 export default function HomePage() {
   const [brandLoud, setBrandLoud] = useState(false);
