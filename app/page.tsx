@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { ArrowRight, Lock, Users, Share2, Code, ShieldCheck, Globe, MessageCircle } from "lucide-react";
+import { ArrowRight, Lock, Users, Share2, Code, ShieldCheck, Globe, MessageCircle, ExternalLink } from "lucide-react";
 import { events } from "@/lib/events";
 
 const INCA_PATTERN =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='32' viewBox='0 0 120 32'%3E%3Cpath d='M0 32h12v-8h8v-8h12v8h8v8h12v-8h8v-8h12v8h8v8h12v-8h8v-8h12v24H0z' fill='%23FECF01'/%3E%3Cpath d='M0 8h12v8h8v8h12v-8h8v-8h12v8h8v8h12v-8h8v-8h12v8h8v8h12v-24H0z' fill='%23FECF01'/%3E%3C/svg%3E";
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M5 0h6v5h5v6h-5v5H5v-5H0V5h5z' fill='%23FECF01'/%3E%3C/svg%3E";
 
 export default function Home() {
   const [asciiIndio, setAsciiIndio] = useState("");
@@ -52,14 +52,18 @@ export default function Home() {
               volvernos actores y no testigos de las nuevas revoluciones tecnológicas."
             </p>
 
-            <div className="flex flex-col md:flex-row gap-4 flex-wrap">
-              <button className="bg-coslat-yellow text-coslat-blue font-pixel text-xl px-8 py-4 hover:bg-white transition-colors uppercase border-b-4 border-black active:border-b-0 active:translate-y-1">
+            <div className="flex flex-col md:flex-row gap-4 flex-wrap z-10">
+              <a
+                href="https://discord.gg/hsNkj4aWh8"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-coslat-yellow text-coslat-blue font-pixel text-xl px-8 py-4 hover:bg-white transition-colors uppercase border-b-4 border-black active:border-b-0 active:translate-y-1 inline-flex items-center justify-center"
+              >
                 Reimaginar el Futuro
-              </button>
+              </a>
               <button className="border-2 border-white text-white font-mono px-8 py-4 hover:bg-white hover:text-coslat-blue transition-colors uppercase flex items-center gap-2">
                 Leer Manifiesto <ArrowRight size={18} />
               </button>
-
             </div>
           </div>
         </div>
@@ -99,7 +103,14 @@ export default function Home() {
                 className="bg-coslat-light text-white p-5 border-4 border-coslat-yellow shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] flex flex-col gap-2"
               >
                 <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80">{event.tag}</p>
-                <h4 className="font-pixel text-2xl">{event.title}</h4>
+                <div className="flex items-center gap-2">
+                  <h4 className="font-pixel text-2xl">{event.title}</h4>
+                  {event.link && (
+                    <a href={event.link} target="_blank" rel="noreferrer" className="text-coslat-yellow hover:underline flex items-center gap-1">
+                      <ExternalLink size={16} />
+                    </a>
+                  )}
+                </div>
                 <div className="font-mono text-sm flex flex-col gap-1">
                   <span className="text-coslat-yellow">{event.date}</span>
                   <span className="text-white/80">{event.location}</span>
@@ -122,9 +133,9 @@ export default function Home() {
               Sé parte de nuestro Colectivo Autónomo Descentralizado.
               Construyamos chips, infraestructura digital y sistemas económicos que nos pertenezcan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:items-center z-10">
               <a
-                href="https://discord.gg/"
+                href="https://discord.gg/hsNkj4aWh8"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full sm:w-auto text-center bg-coslat-accent text-white font-mono px-6 py-3 uppercase flex items-center justify-center gap-2 border-2 border-coslat-accent hover:bg-white hover:text-coslat-accent transition-colors"
@@ -223,14 +234,14 @@ export default function Home() {
       {/* --- FOOTER --- */}
       <footer className="relative bg-coslat-dark text-white pt-16 pb-12 overflow-hidden">
         <div
-          className="absolute top-0 left-0 w-full h-12"
-          style={{ backgroundImage: `url("${INCA_PATTERN}")`, backgroundRepeat: "repeat-x", backgroundSize: "120px 32px" }}
+          className="absolute top-0 left-0 w-full h-16"
+          style={{ backgroundImage: `url("${INCA_PATTERN}")`, backgroundRepeat: "repeat-x", backgroundSize: "16px 16px" }}
         ></div>
         <div className="container mx-auto px-6 text-center">
           <h4 className="font-pixel text-4xl mb-4">COSLAT</h4>
           <p className="font-mono text-sm opacity-70">
             Colectivo por la Soberanía Latinoamericana del Futuro.
-            <br/>Copyleft 2024.
+            <br/>Copyleft 202.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 font-mono text-sm">
             <a href="https://www.instagram.com/cos.lat/" className="underline underline-offset-4 hover:text-coslat-yellow transition-colors" target="_blank" rel="noreferrer">

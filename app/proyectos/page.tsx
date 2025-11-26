@@ -1,8 +1,5 @@
-const projects = [
-  { name: "Nodo de Cómputo Distribuido", status: "En curso", focus: "Infraestructura", color: "border-coslat-accent text-coslat-accent" },
-  { name: "Tooling IA en Español", status: "En diseño", focus: "Software", color: "border-coslat-blue text-coslat-blue" },
-  { name: "Kit de Hardware Libre", status: "Próximo", focus: "Hardware", color: "border-coslat-dark text-coslat-dark" },
-];
+import { projects } from "@/lib/projects";
+import { ExternalLink } from "lucide-react";
 
 export default function ProyectosPage() {
   return (
@@ -22,7 +19,14 @@ export default function ProyectosPage() {
               key={project.name}
               className="bg-white border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,0.2)] p-6 flex flex-col gap-2"
             >
-              <h2 className="font-pixel text-2xl text-coslat-blue">{project.name}</h2>
+              <div className="flex items-center gap-2">
+                <h2 className="font-pixel text-2xl text-coslat-blue">{project.name}</h2>
+                {project.link && (
+                  <a href={project.link} target="_blank" rel="noreferrer" className="text-coslat-accent hover:underline flex items-center gap-1">
+                    <ExternalLink size={16} />
+                  </a>
+                )}
+              </div>
               <div className="flex flex-wrap gap-2 text-xs font-mono uppercase tracking-[0.08em]">
                 <span className={`px-2 py-1 border-2 ${project.color}`}>
                   {project.status}
