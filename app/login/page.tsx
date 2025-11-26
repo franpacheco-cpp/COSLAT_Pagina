@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import type { Route } from "next";
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") || "/admin";
+  const redirectParam = searchParams.get("redirect");
+  const redirect: Route = redirectParam && redirectParam.startsWith("/") ? (redirectParam as Route) : "/admin";
   const missingCreds = searchParams.get("error") === "missing_creds";
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -78,5 +80,13 @@ export default function LoginPage() {
         </form>
       </div>
     </main>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-coslat-blue text-white px-6">Cargando...</div>}>
+      <LoginContent />
+    </Suspense>
   );
 }
