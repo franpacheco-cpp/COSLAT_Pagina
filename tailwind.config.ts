@@ -11,14 +11,15 @@ const config: Config = {
     extend: {
       colors: {
         coslat: {
-          blue: "#3D9DD9",
-          yellow: "#F2E205",
-          dark: "#BF751B",
-          light: "#03A678",
-          accent: "#D9043D",
+          blue: "#06B9CE",
+          yellow: "#FECF01",
+          dark: "#471D20",
+          light: "#57934E",
+          accent: "#E16482",
         },
       },
       fontFamily: {
+        title: ['Dahlia', 'var(--font-libre)', 'serif'],
         pixel: ['var(--font-vt323)', 'monospace'],
         mono: ['var(--font-space-mono)', 'monospace'],
         serif: ['var(--font-libre)', 'serif'],

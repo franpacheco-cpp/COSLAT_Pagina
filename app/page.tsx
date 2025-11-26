@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { ArrowRight, Lock, Users, Share2, Code, ShieldCheck, Globe } from "lucide-react";
+import { ArrowRight, Lock, Users, Share2, Code, ShieldCheck, Globe, MessageCircle } from "lucide-react";
 import { events } from "@/lib/events";
 
 export default function Home() {
@@ -34,12 +34,12 @@ export default function Home() {
 
             
             <h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-pixel leading-none mb-3 glitch-text" 
+              className="text-6xl md:text-8xl lg:text-9xl font-title leading-none mb-3 glitch-text" 
               data-text="Soberanía"
             >
               Soberanía
             </h1>
-            <h2 className="text-4xl md:text-6xl font-serif italic mb-8 max-w-4xl leading-tight">
+            <h2 className="text-4xl md:text-6xl font-title italic mb-8 max-w-4xl leading-tight">
               Latinoamericana del Futuro
             </h2>
 
@@ -49,13 +49,21 @@ export default function Home() {
               volvernos actores y no testigos de las nuevas revoluciones tecnológicas."
             </p>
 
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col md:flex-row gap-4 flex-wrap">
               <button className="bg-coslat-yellow text-coslat-blue font-pixel text-xl px-8 py-4 hover:bg-white transition-colors uppercase border-b-4 border-black active:border-b-0 active:translate-y-1">
                 Reimaginar el Futuro
               </button>
               <button className="border-2 border-white text-white font-mono px-8 py-4 hover:bg-white hover:text-coslat-blue transition-colors uppercase flex items-center gap-2">
                 Leer Manifiesto <ArrowRight size={18} />
               </button>
+              <a
+                href="https://discord.gg/"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-coslat-accent text-white font-mono px-8 py-4 uppercase flex items-center gap-2 border-2 border-coslat-accent hover:bg-white hover:text-coslat-accent transition-colors"
+              >
+                Únete al Discord <MessageCircle size={18} />
+              </a>
             </div>
           </div>
         </div>
@@ -75,7 +83,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <p className="font-mono uppercase text-xs tracking-[0.2em] text-coslat-dark">Calendario</p>
-              <h3 className="font-pixel text-4xl md:text-5xl">Próximos eventos</h3>
+              <h3 className="font-title text-4xl md:text-5xl">Próximos eventos</h3>
               <p className="font-mono text-sm md:text-base text-coslat-dark/80 mt-2">
                 Sigue las acciones del colectivo y súmate a la próxima sesión.
               </p>
@@ -107,10 +115,10 @@ export default function Home() {
       </section>
 
       {/* --- CALL TO ACTION (Based on Image 2) --- */}
-      <section className="bg-white text-coslat-blue py-20 border-b-8 border-coslat-blue">
-        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <section className="relative bg-white text-coslat-blue py-20 overflow-hidden">
+        <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
-            <h3 className="font-serif text-4xl md:text-5xl mb-6">Llamamos a artistas,<br/>desarrolladores,<br/>revolucionarios.</h3>
+            <h3 className="font-title text-4xl md:text-5xl mb-6">Llamamos a artistas,<br/>desarrolladores,<br/>revolucionarios.</h3>
             <div className="bg-coslat-blue text-white p-6 inline-block transform -rotate-1 mb-8">
               <span className="font-pixel text-2xl md:text-3xl">A reimaginar el futuro de América Latina.</span>
             </div>
@@ -118,33 +126,22 @@ export default function Home() {
               Sé parte de nuestro Colectivo Autónomo Descentralizado.
               Construyamos chips, infraestructura digital y sistemas económicos que nos pertenezcan.
             </p>
-          </div>
-          <div className="relative h-64 md:h-96 w-full bg-coslat-light border-2 border-coslat-blue p-4 flex items-center justify-center overflow-hidden">
-            {/* Abstract ASCII Map representation */}
-            <pre className="font-pixel text-[8px] md:text-[10px] leading-[8px] text-coslat-blue opacity-50 whitespace-pre">
-              {`
-           ..:::::..
-         .::'     '::.
-        ::'         '::
-       ::            ::
-       ::            ::   LATAM
-       ::           .::   
-       ::.        .::'    CARGANDO...
-        '::.    .::'
-          '::::::'
-              ::
-              ::
-              ::
-        .::'  ::  '::.
-       ::'    ::    '::
-              `}
-            </pre>
-            <div className="absolute inset-0 flex items-center justify-center">
-               <div className="bg-coslat-yellow p-4 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                  <span className="font-pixel text-2xl text-black">ÚNETE AHORA</span>
-               </div>
+            <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+              <a
+                href="https://discord.gg/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full sm:w-auto text-center bg-coslat-accent text-white font-mono px-6 py-3 uppercase flex items-center justify-center gap-2 border-2 border-coslat-accent hover:bg-white hover:text-coslat-accent transition-colors"
+              >
+                Únete al Discord <MessageCircle size={18} />
+              </a>
             </div>
           </div>
+            <img 
+              src="/Antorcha.png" 
+              alt="Antorcha COSLAT" 
+              className="absolute bottom-0 right-offset mx-20 md:right-4 w-auto max-h-[24rem] md:max-h-[37rem] object-contain"
+            />
         </div>
       </section>
 
@@ -152,7 +149,7 @@ export default function Home() {
       <section id="principios" className="py-24 bg-coslat-light text-white relative">
         <div className="container mx-auto px-6">
           <div className="flex items-end gap-4 mb-16 border-b border-gray-700 pb-4">
-             <h2 className="text-6xl font-pixel text-coslat-yellow">BASES</h2>
+             <h2 className="text-6xl font-title text-coslat-yellow">BASES</h2>
              <span className="font-mono text-black-400 mb-2">/ Estructura Organizativa v1.0</span>
           </div>
 
@@ -200,7 +197,7 @@ export default function Home() {
       {/* --- FINES (Based on the flow chart ends) --- */}
       <section id="fines" className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <h2 className="text-5xl font-serif text-coslat-blue mb-12 text-center">Nuestros Fines</h2>
+          <h2 className="text-5xl font-title text-coslat-blue mb-12 text-center">Nuestros Fines</h2>
           
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 relative">
             {/* Connector Line */}
@@ -265,7 +262,7 @@ function PrincipleCard({ title, icon, desc }: { title: string, icon: any, desc: 
 
 function GoalStep({ number, title, desc }: { number: string, title: string, desc: string }) {
   return (
-        <div className="relative z-10 bg-white p-6 border-2 border-coslat-blue w-full md:w-1/3 shadow-[8px_8px_0px_0px_#F2E205]">
+        <div className="relative z-10 bg-white p-6 border-2 border-coslat-blue w-full md:w-1/3 shadow-[8px_8px_0px_0px_#FECF01]">
       <div className="w-12 h-12 bg-coslat-blue text-white font-pixel text-xl flex items-center justify-center mb-4">
         {number}
       </div>
