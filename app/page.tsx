@@ -21,8 +21,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-dither opacity-20 pointer-events-none"></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-coslat-yellow opacity-10 hidden lg:block skew-x-12 transform translate-x-20"></div>
         {asciiIndio && (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-end pr-4 md:pr-10 -translate-y-10 md:-translate-y-16">
-            <pre className="ascii-animate mr-[-96px] md:mr-[-140px] lg:mr-[-180px] text-coslat-yellow/50 font-mono text-[6px] sm:text-[7px] md:text-[8px] lg:text-[9px] xl:text-[10px] leading-[7px] sm:leading-[8px] md:leading-[9px] lg:leading-[10px] whitespace-pre text-right mix-blend-screen drop-shadow-[0_0_10px_rgba(0,0,0,0.4)] opacity-90 max-h-full overflow-hidden">
+          <div className="pointer-events-none absolute inset-0 flex items-end justify-end pr-4 md:pr-10 pb-4">
+            <pre className="mr-[-96px] md:mr-[-140px] lg:mr-[-180px] text-coslat-yellow/50 font-mono text-[6px] sm:text-[7px] md:text-[8px] lg:text-[9px] xl:text-[10px] leading-[6px] sm:leading-[7px] md:leading-[8px] lg:leading-[9px] whitespace-pre text-right mix-blend-screen drop-shadow-[0_0_10px_rgba(0,0,0,0.4)] opacity-85 max-h-full overflow-hidden">
               {asciiIndio}
             </pre>
           </div>
@@ -30,24 +30,22 @@ export default function Home() {
 
         <div className="container mx-auto px-6 py-20 flex flex-col items-start justify-center gap-12 flex-1 relative z-10">
           <div className="flex-1 w-full">
-            <div className="inline-block mb-4 border border-coslat-yellow px-2 py-1 text-coslat-yellow font-mono text-sm uppercase tracking-widest w-fit">
-              Source Code Pro
-            </div>
+
             
             <h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-pixel leading-none mb-6 glitch-text uppercase" 
-              data-text="SOBERANÍA"
+              className="text-6xl md:text-8xl lg:text-9xl font-pixel leading-none mb-3 glitch-text" 
+              data-text="Soberanía"
             >
-              SOBERANÍA
+              Soberanía
             </h1>
             <h2 className="text-4xl md:text-6xl font-serif italic mb-8 max-w-4xl leading-tight">
               Latinoamericana del Futuro
             </h2>
 
             <p className="font-mono text-lg md:text-xl max-w-2xl mb-12 border-l-4 border-coslat-yellow pl-6 py-2">
-              "Si Latinoamérica adoptara la IA de forma real (no consumiendo ChatGPT), 
-              su economía podría expandirse entre un 5% y un 14% adicional por año. 
-              Una aceleración histórica que reconfiguraría todo el orden productivo."
+              "Somos un colectivo de desarrolladores, artistas y revolucionarios dispuestos
+              a reinventar un futuro para Latinoamérica que no venga de afuera. Creemos en
+              volvernos actores y no testigos de las nuevas revoluciones tecnológicas."
             </p>
 
             <div className="flex flex-col md:flex-row gap-4">
@@ -113,11 +111,11 @@ export default function Home() {
       </section>
 
       {/* --- BASES & PRINCIPLES (Based on Image 3) --- */}
-      <section id="principios" className="py-24 bg-coslat-dark text-white relative">
+      <section id="principios" className="py-24 bg-coslat-light text-white relative">
         <div className="container mx-auto px-6">
           <div className="flex items-end gap-4 mb-16 border-b border-gray-700 pb-4">
              <h2 className="text-6xl font-pixel text-coslat-yellow">BASES</h2>
-             <span className="font-mono text-gray-400 mb-2">/ Estructura Organizativa v1.0</span>
+             <span className="font-mono text-black-400 mb-2">/ Estructura Organizativa v1.0</span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -218,7 +216,7 @@ function PrincipleCard({ title, icon, desc }: { title: string, icon: any, desc: 
 
 function GoalStep({ number, title, desc }: { number: string, title: string, desc: string }) {
   return (
-    <div className="relative z-10 bg-white p-6 border-2 border-coslat-blue w-full md:w-1/3 shadow-[8px_8px_0px_0px_#FFD500]">
+        <div className="relative z-10 bg-white p-6 border-2 border-coslat-blue w-full md:w-1/3 shadow-[8px_8px_0px_0px_#F2E205]">
       <div className="w-12 h-12 bg-coslat-blue text-white font-pixel text-xl flex items-center justify-center mb-4">
         {number}
       </div>

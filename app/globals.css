@@ -30,14 +30,14 @@ body {
 
 .glitch-text::before {
   left: 2px;
-  text-shadow: -1px 0 #FFD500;
+  text-shadow: -1px 0 #F2E205;
   clip: rect(44px, 450px, 56px, 0);
   animation: glitch-anim 5s infinite linear alternate-reverse;
 }
 
 .glitch-text::after {
   left: -2px;
-  text-shadow: -1px 0 #00158F;
+  text-shadow: -1px 0 #3D9DD9;
   clip: rect(44px, 450px, 56px, 0);
   animation: glitch-anim2 5s infinite linear alternate-reverse;
 }
@@ -61,29 +61,8 @@ body {
 }
 
 .bg-dither {
-  background-image: radial-gradient(#00158F 1px, transparent 1px);
+  background-image: radial-gradient(#3D9DD9 1px, transparent 1px);
   background-size: 4px 4px;
 }
 
-/* Animated ASCII overlay */
-.ascii-animate {
-  color: transparent;
-  background-image: linear-gradient(120deg, rgba(255, 213, 0, 0.35), rgba(255, 255, 255, 0.75), rgba(255, 213, 0, 0.35));
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: ascii-gradient 18s linear infinite, ascii-flicker 3.6s ease-in-out infinite;
-}
-
-@keyframes ascii-gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 200% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes ascii-flicker {
-  0%, 100% { opacity: 0.6; }
-  35% { opacity: 0.95; }
-  65% { opacity: 0.75; }
-}
+/* Static ASCII overlay (no animation to keep it light) */

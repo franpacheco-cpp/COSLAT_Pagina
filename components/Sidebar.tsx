@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Cpu, Globe, Users, Target, Menu } from "lucide-react";
 
 export default function Sidebar() {
@@ -11,13 +12,16 @@ export default function Sidebar() {
 
   return (
     <aside className="fixed left-0 top-0 z-50 h-16 w-full md:h-screen md:w-64 bg-coslat-blue text-white border-r-4 border-coslat-yellow flex flex-row md:flex-col justify-between p-6">
-      <div className="flex flex-col gap-2">
-        <h1 className="font-pixel text-4xl md:text-5xl text-coslat-yellow leading-none tracking-tighter">
-          COS<br className="hidden md:block"/>LAT
-        </h1>
-        <p className="hidden md:block text-xs font-mono opacity-80 mt-2">
-          COLECTIVO POR LA<br/>SOBERANÍA LATINOAMERICANA<br/>DEL FUTURO
-        </p>
+      <div className="flex items-center md:items-start gap-3 md:gap-2">
+        <div className="relative w-12 h-12 md:w-16 md:h-16">
+          <Image src="/coslat_logo.svg" alt="COSLAT logo" fill priority className="object-contain" />
+        </div>
+        <div className="flex flex-col gap-1">
+
+          <p className="hidden md:block text-xs font-mono opacity-80">
+            COLECTIVO POR LA<br/>SOBERANÍA LATINOAMERICANA<br/>DEL FUTURO
+          </p>
+        </div>
       </div>
 
       <nav className="hidden md:flex flex-col gap-6 mt-12">

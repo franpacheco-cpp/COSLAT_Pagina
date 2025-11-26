@@ -11,10 +11,11 @@ const config: Config = {
     extend: {
       colors: {
         coslat: {
-          blue: "#00158F",     // Deep electric blue from images
-          yellow: "#FFD500",   // Bright yellow icon color
-          dark: "#050505",     // Almost black
-          light: "#F0F0F0",    // Off-white
+          blue: "#3D9DD9",
+          yellow: "#F2E205",
+          dark: "#BF751B",
+          light: "#03A678",
+          accent: "#D9043D",
         },
       },
       fontFamily: {
