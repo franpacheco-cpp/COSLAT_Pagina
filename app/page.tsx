@@ -61,9 +61,12 @@ export default function Home() {
               >
                 Reimaginar el Futuro
               </a>
-              <button className="border-2 border-white text-white font-mono px-8 py-4 hover:bg-white hover:text-coslat-blue transition-colors uppercase flex items-center gap-2">
+              <a
+                href="/manifiesto"
+                className="border-2 border-white text-white font-mono px-8 py-4 hover:bg-white hover:text-coslat-blue transition-colors uppercase flex items-center gap-2"
+              >
                 Leer Manifiesto <ArrowRight size={18} />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -241,7 +244,7 @@ export default function Home() {
           <h4 className="font-pixel text-4xl mb-4">COSLAT</h4>
           <p className="font-mono text-sm opacity-70">
             Colectivo por la Soberanía Latinoamericana del Futuro.
-            <br/>Copyleft 202.
+            <br/>Copyleft 2025.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 font-mono text-sm">
             <a href="https://www.instagram.com/cos.lat/" className="underline underline-offset-4 hover:text-coslat-yellow transition-colors" target="_blank" rel="noreferrer">
