@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Lock, Users, Share2, Code, ShieldCheck, Globe, MessageCircle } from "lucide-react";
 import { events } from "@/lib/events";
 
+const INCA_PATTERN =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='32' viewBox='0 0 120 32'%3E%3Cpath d='M0 32h12v-8h8v-8h12v8h8v8h12v-8h8v-8h12v8h8v8h12v-8h8v-8h12v24H0z' fill='%23FECF01'/%3E%3Cpath d='M0 8h12v8h8v8h12v-8h8v-8h12v8h8v8h12v-8h8v-8h12v8h8v8h12v-24H0z' fill='%23FECF01'/%3E%3C/svg%3E";
+
 export default function Home() {
   const [asciiIndio, setAsciiIndio] = useState("");
 
@@ -108,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* --- CALL TO ACTION (Based on Image 2) --- */}
-      <section className="relative bg-white text-coslat-blue py-20 overflow-hidden">
+      <section id="estructura" className="relative bg-white text-coslat-blue py-20 overflow-hidden">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div>
             <h3 className="font-title text-4xl md:text-5xl mb-6">Llamamos a artistas,<br/>desarrolladores,<br/>revolucionarios.</h3>
@@ -130,11 +133,13 @@ export default function Home() {
               </a>
             </div>
           </div>
+          <div className="relative w-full min-h-[18rem] md:min-h-[30rem]">
             <img 
               src="/Antorcha.png" 
               alt="Antorcha COSLAT" 
-              className="absolute bottom-0 right-offset mx-20 md:right-4 w-auto max-h-[24rem] md:max-h-[37rem] object-contain"
+              className="absolute bottom-0 right-0 md:right-6 w-auto max-h-[26rem] md:max-h-[38rem] object-contain"
             />
+          </div>
         </div>
       </section>
 
@@ -216,7 +221,11 @@ export default function Home() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="bg-coslat-dark text-white py-12 border-t-8 border-coslat-yellow">
+      <footer className="relative bg-coslat-dark text-white pt-16 pb-12 overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-12"
+          style={{ backgroundImage: `url("${INCA_PATTERN}")`, backgroundRepeat: "repeat-x", backgroundSize: "120px 32px" }}
+        ></div>
         <div className="container mx-auto px-6 text-center">
           <h4 className="font-pixel text-4xl mb-4">COSLAT</h4>
           <p className="font-mono text-sm opacity-70">

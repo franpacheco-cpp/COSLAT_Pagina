@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Cpu, Globe, Users, Target, Menu, CalendarRange, FolderGit2 } from "lucide-react";
+import type { Route } from "next";
 
 export default function Sidebar() {
-  const navItems = [
+  const navItems: { name: string; href: string; icon: JSX.Element }[] = [
     { name: "INICIO", href: "#hero", icon: <Globe size={20} /> },
     { name: "PRINCIPIOS", href: "#principios", icon: <Cpu size={20} /> },
     { name: "ESTRUCTURA", href: "#estructura", icon: <Users size={20} /> },
@@ -27,16 +28,28 @@ export default function Sidebar() {
       </div>
 
       <nav className="hidden md:flex flex-col gap-6 mt-12">
-        {navItems.map((item) => (
-          <Link 
-            key={item.name} 
-            href={item.href}
-            className="flex items-center gap-3 font-pixel text-2xl hover:text-coslat-yellow hover:translate-x-2 transition-transform duration-200"
-          >
-            {item.icon}
-            {item.name}
-          </Link>
-        ))}
+        {navItems.map((item) => {
+          const isHash = item.href.startsWith("#");
+          return isHash ? (
+            <a
+              key={item.name}
+              href={item.href}
+              className="flex items-center gap-3 font-pixel text-2xl hover:text-coslat-yellow hover:translate-x-2 transition-transform duration-200"
+            >
+              {item.icon}
+              {item.name}
+            </a>
+          ) : (
+            <Link
+              key={item.name}
+              href={item.href as Route}
+              className="flex items-center gap-3 font-pixel text-2xl hover:text-coslat-yellow hover:translate-x-2 transition-transform duration-200"
+            >
+              {item.icon}
+              {item.name}
+            </Link>
+          );
+        })}
       </nav>
 
       <div className="hidden md:block mt-auto">
