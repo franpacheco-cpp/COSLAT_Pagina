@@ -91,48 +91,50 @@ export default function Home() {
       </section>
 
       {/* --- UPCOMING EVENTS --- */}
-      <section className="bg-white text-coslat-blue py-16 border-b-8 border-coslat-yellow">
-        <div className="container mx-auto px-6 space-y-10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-              <p className="font-mono uppercase text-xs tracking-[0.2em] text-coslat-dark">Calendario</p>
-              <h3 className="font-title text-4xl md:text-5xl">Próximos eventos</h3>
-              <p className="font-mono text-sm md:text-base text-coslat-dark/80 mt-2">
-                Sigue las acciones del colectivo y súmate a la próxima sesión.
-              </p>
-            </div>
-            <a
-              href="/eventos"
-              className="inline-flex items-center gap-2 font-mono uppercase border-2 border-coslat-blue px-4 py-2 hover:bg-coslat-blue hover:text-white transition-colors"
-            >
-              Ver todos <ArrowRight size={16} />
-            </a>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3">
-            {events.slice(0, 3).map((event) => (
-              <div
-                key={event.title}
-                className="bg-coslat-light text-white p-5 border-4 border-coslat-yellow shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] flex flex-col gap-2"
-              >
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80">{event.tag}</p>
-                <div className="flex items-center gap-2">
-                  <h4 className="font-pixel text-2xl">{event.title}</h4>
-                  {event.link && (
-                    <a href={event.link} target="_blank" rel="noreferrer" className="text-coslat-yellow hover:underline flex items-center gap-1">
-                      <ExternalLink size={16} />
-                    </a>
-                  )}
-                </div>
-                <div className="font-mono text-sm flex flex-col gap-1">
-                  <span className="text-coslat-yellow">{event.date}</span>
-                  <span className="text-white/80">{event.location}</span>
-                </div>
+      {events.length > 0 && (
+        <section className="bg-white text-coslat-blue py-16 border-b-8 border-coslat-yellow">
+          <div className="container mx-auto px-6 space-y-10">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <p className="font-mono uppercase text-xs tracking-[0.2em] text-coslat-dark">Calendario</p>
+                <h3 className="font-title text-4xl md:text-5xl">Próximos eventos</h3>
+                <p className="font-mono text-sm md:text-base text-coslat-dark/80 mt-2">
+                  Sigue las acciones del colectivo y súmate a la próxima sesión.
+                </p>
               </div>
-            ))}
+              <a
+                href="/eventos"
+                className="inline-flex items-center gap-2 font-mono uppercase border-2 border-coslat-blue px-4 py-2 hover:bg-coslat-blue hover:text-white transition-colors"
+              >
+                Ver todos <ArrowRight size={16} />
+              </a>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {events.slice(0, 3).map((event) => (
+                <div
+                  key={event.title}
+                  className="bg-coslat-light text-white p-5 border-4 border-coslat-yellow shadow-[8px_8px_0px_0px_rgba(0,0,0,0.2)] flex flex-col gap-2"
+                >
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/80">{event.tag}</p>
+                  <div className="flex items-center gap-2">
+                    <h4 className="font-pixel text-2xl">{event.title}</h4>
+                    {event.link && (
+                      <a href={event.link} target="_blank" rel="noreferrer" className="text-coslat-yellow hover:underline flex items-center gap-1">
+                        <ExternalLink size={16} />
+                      </a>
+                    )}
+                  </div>
+                  <div className="font-mono text-sm flex flex-col gap-1">
+                    <span className="text-coslat-yellow">{event.date}</span>
+                    <span className="text-white/80">{event.location}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* --- CALL TO ACTION (Based on Image 2) --- */}
       <section id="estructura" className="relative bg-white text-coslat-blue py-20 overflow-hidden">
